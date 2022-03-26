@@ -1,2 +1,2 @@
-# EIA1_SoSE22
+# EIA1_SoSe22
 Entwicklung Interaktiver Medien - 1. Semester
