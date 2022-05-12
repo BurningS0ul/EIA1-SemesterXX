@@ -51,13 +51,13 @@ console.log(z2 + Math.abs(SPA21-SPA08).toFixed(2) + x4);
 
 //functions
 
-const GERMANY = {
+function GERMANY() {
     GerxEU: Math.abs((GER21/EU)*100).toFixed(2);
     GERxGER: Math.abs((GER08/GER21)).toFixed(2);
     GERxOLD: Math.abs(GER21-GER08).toFixed(2);
-    full: function(){
-    return this.GERxEU + " " + this.GERxGER + " " + GERxOLD;
-    }
+    console.log(GERxEU + GERxGER + GERxOLD);
 }
-
-document.getElementById("mygermany").addEventListener("click", GERMANY);
+window.addEventListener('load', function()){
+    document.querySelector(".germany").setAttribute('class','active');
+    document.querySelector(".germany").addEventListener('click', GERMANY);
+}

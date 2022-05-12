@@ -36,13 +36,15 @@ console.log(y + Math.abs((SPA21 / EU) * 100).toFixed(2) + y2);
 console.log(z + Math.abs((SPA08 / SPA21)).toFixed(2) + y2);
 console.log(z2 + Math.abs(SPA21 - SPA08).toFixed(2) + x4);
 //functions
-const GERMANY = {
-    GerxEU: Math.abs((GER21 / EU) * 100).toFixed(2),
-    GERxGER: Math.abs((GER08 / GER21)).toFixed(2),
-    GERxOLD: Math.abs(GER21 - GER08).toFixed(2),
-    full: function () {
-        return this.GERxEU + " " + this.GERxGER + " " + GERxOLD;
-    }
-};
-document.getElementById("mygermany").addEventListener("click", GERMANY);
+function GERMANY() {
+    GerxEU: Math.abs((GER21 / EU) * 100).toFixed(2);
+    GERxGER: Math.abs((GER08 / GER21)).toFixed(2);
+    GERxOLD: Math.abs(GER21 - GER08).toFixed(2);
+    console.log(GERxEU + GERxGER + GERxOLD);
+}
+window.addEventListener('load', function () { });
+{
+    document.querySelector(".germany").setAttribute('class', 'active');
+    document.querySelector(".germany").addEventListener('click', GERMANY);
+}
 //# sourceMappingURL=scripts.js.map
