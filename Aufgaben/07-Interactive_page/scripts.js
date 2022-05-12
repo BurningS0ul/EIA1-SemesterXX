@@ -1,15 +1,20 @@
-//Set values
-const mycountry = ["Deutschland", "Italien", "Frankreich", "Spanien"];
-var GER21 = "83.2";
-var GER08 = "82.0";
-var ITA21 = "59.58";
-var ITA08 = "59.0";
-var FRA21 = "65.3";
-var FRA08 = "62.14";
-var SPA21 = "47.16";
-var SPA08 = "45.98";
-var EU = "447.01";
-//set texts
+//defining values
+const EU = {
+    ALL: 447.01,
+    DE: "Deutschland",
+    GER21: 83.2,
+    GER08: 82.0,
+    ITA: "Italien",
+    ITA21: 59.58,
+    ITA08: 59.0,
+    FRA: "Frankreich",
+    FRA21: 65.3,
+    FRA08: 62.14,
+    SPA: "Spanien",
+    SPA21: 47.16,
+    SPA08: 45.98
+};
+//defining texts
 const x = "Gesamtzahl Einwohnerinnen und Einwohner in ";
 const x2 = " im Jahr 2021";
 const x3 = ": ";
@@ -18,33 +23,48 @@ const y = "Relativ zur Gesamtzahl der EU: ";
 const y2 = "%";
 const z = "Wachstumsrate seit 2008: ";
 const z2 = "Wachstumsrate gesamt zwischen 2008 und 2021: ";
-//set console logs
-console.log(x + mycountry[0] + x2 + x3 + GER21 + x4);
-console.log(y + Math.abs((GER21 / EU) * 100).toFixed(2) + y2);
-console.log(z + Math.abs((GER08 / GER21)).toFixed(2) + y2);
-console.log(z2 + Math.abs(GER21 - GER08).toFixed(2) + x4);
-console.log(x + mycountry[1] + x2 + x3 + ITA21 + x4);
-console.log(y + Math.abs((ITA21 / EU) * 100).toFixed(2) + y2);
-console.log(z + Math.abs((ITA08 / ITA21)).toFixed(2) + y2);
-console.log(z2 + Math.abs(ITA21 - ITA08).toFixed(2) + x4);
-console.log(x + mycountry[2] + x2 + x3 + FRA21 + x4);
-console.log(y + Math.abs((FRA21 / EU) * 100).toFixed(2) + y2);
-console.log(z + Math.abs((FRA08 / FRA21)).toFixed(2) + y2);
-console.log(z2 + Math.abs(FRA21 - FRA08).toFixed(2) + x4);
-console.log(x + mycountry[3] + x2 + x3 + SPA21 + x4);
-console.log(y + Math.abs((SPA21 / EU) * 100).toFixed(2) + y2);
-console.log(z + Math.abs((SPA08 / SPA21)).toFixed(2) + y2);
-console.log(z2 + Math.abs(SPA21 - SPA08).toFixed(2) + x4);
-//functions
+//EU functions
 function GERMANY() {
-    GerxEU: Math.abs((GER21 / EU) * 100).toFixed(2);
-    GERxGER: Math.abs((GER08 / GER21)).toFixed(2);
-    GERxOLD: Math.abs(GER21 - GER08).toFixed(2);
-    console.log(GERxEU + GERxGER + GERxOLD);
+    document.getElementById("num").innerHTML = EU.GER21 + x4;
+    document.getElementById("country").innerHTML = x + EU.DE + x2;
+    document.getElementById("total").innerHTML = Math.abs((EU.GER21 / EU.ALL) * 100).toFixed(2) + y2;
+    document.getElementById("percent").innerHTML = Math.abs(EU.GER08 / EU.GER21).toFixed(2) + y2;
+    document.getElementById("rate").innerHTML = Math.abs(EU.GER21 - EU.GER08).toFixed(2) + x4;
+    document.querySelector(".chartWrapper .chart").innerHTML = Math.abs((EU.GER21 / EU.ALL) * 100).toFixed(2);
+    document.querySelector('.wrapper').classList.add('active');
 }
-window.addEventListener('load', function () { });
-{
-    document.querySelector(".germany").setAttribute('class', 'active');
+function ITALY() {
+    document.getElementById("num").innerHTML = EU.ITA21 + x4;
+    document.getElementById("country").innerHTML = x + EU.ITA + x2;
+    document.getElementById("total").innerHTML = Math.abs((EU.ITA21 / EU.ALL) * 100).toFixed(2) + y2;
+    document.getElementById("percent").innerHTML = Math.abs(EU.ITA08 / EU.ITA21).toFixed(2) + y2;
+    document.getElementById("rate").innerHTML = Math.abs(EU.ITA21 - EU.ITA08).toFixed(2) + x4;
+    document.querySelector(".chartWrapper .chart").innerHTML = Math.abs((EU.ITA21 / EU.ALL) * 100).toFixed(2);
+    document.querySelector('.wrapper').classList.add('active');
+}
+function FRANCE() {
+    document.getElementById("num").innerHTML = EU.FRA21 + x4;
+    document.getElementById("country").innerHTML = x + EU.FRA + x2;
+    document.getElementById("total").innerHTML = Math.abs((EU.FRA21 / EU.ALL) * 100).toFixed(2) + y2;
+    document.getElementById("percent").innerHTML = Math.abs(EU.FRA08 / EU.FRA21).toFixed(2);
+    document.getElementById("rate").innerHTML = Math.abs(EU.FRA21 - EU.FRA08).toFixed(2);
+    document.querySelector(".chartWrapper .chart").innerHTML = Math.abs((EU.FRA21 / EU.ALL) * 100).toFixed(2);
+    document.querySelector('.wrapper').classList.add('active');
+}
+function SPAIN() {
+    document.getElementById("num").innerHTML = EU.SPA21 + x4;
+    document.getElementById("country").innerHTML = x + EU.SPA + x2;
+    document.getElementById("total").innerHTML = Math.abs((EU.SPA21 / EU.ALL) * 100).toFixed(2);
+    document.getElementById("percent").innerHTML = Math.abs(EU.SPA08 / EU.SPA21).toFixed(2);
+    document.getElementById("rate").innerHTML = Math.abs(EU.SPA21 - EU.SPA08).toFixed(2);
+    document.querySelector(".chartWrapper .chart").innerHTML = Math.abs((EU.SPA21 / EU.ALL) * 100).toFixed(2);
+    document.querySelector('.wrapper').classList.add('active');
+}
+//load functions
+window.addEventListener("load", function () {
     document.querySelector(".germany").addEventListener('click', GERMANY);
-}
+    document.querySelector(".italy").addEventListener('click', ITALY);
+    document.querySelector(".france").addEventListener('click', FRANCE);
+    document.querySelector(".spain").addEventListener('click', SPAIN);
+});
 //# sourceMappingURL=scripts.js.map
