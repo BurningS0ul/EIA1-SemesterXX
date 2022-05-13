@@ -42,8 +42,8 @@ function STARS(){
     document.getElementById("rate").innerHTML = Math.abs(EU.ALL-EU.ALL08).toFixed(2) + x4;
 
     document.querySelector(".chart").setAttribute("style", "height: " + "100%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "1");
 
-    document.querySelector("#eu").setAttribute("class", "active");
     document.querySelector("#it").setAttribute("class", "wrapper");
     document.querySelector("#fr").setAttribute("class", "wrapper");
     document.querySelector("#sp").setAttribute("class", "wrapper");
@@ -62,12 +62,12 @@ function GERMANY() {
 
     var change = (EU.GER21/EU.ALL)*100;
     document.querySelector(".chart").setAttribute("style", "height: " + change + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5");
 
     document.querySelector("#de").setAttribute("class", "active");
     document.querySelector("#it").setAttribute("class", "wrapper");
     document.querySelector("#fr").setAttribute("class", "wrapper");
     document.querySelector("#sp").setAttribute("class", "wrapper");
-    document.querySelector("#eu").setAttribute("class", "wrapper");
 }
 
 function ITALY(){    
@@ -81,12 +81,12 @@ function ITALY(){
     
     var change = (EU.ITA21/EU.ALL)*100;
     document.querySelector(".chart").setAttribute("style", "height: " + change + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5");
 
     document.querySelector("#it").setAttribute("class", "active");
     document.querySelector("#de").setAttribute("class", "wrapper");
     document.querySelector("#fr").setAttribute("class", "wrapper");
     document.querySelector("#sp").setAttribute("class", "wrapper");
-    document.querySelector("#eu").setAttribute("class", "wrapper");
 }
 
 function FRANCE(){
@@ -100,12 +100,12 @@ function FRANCE(){
 
     var change = (EU.FRA21/EU.ALL)*100;
     document.querySelector(".chart").setAttribute("style", "height: " + change + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5");
 
     document.querySelector("#fr").setAttribute("class", "active");
     document.querySelector("#it").setAttribute("class", "wrapper");
     document.querySelector("#de").setAttribute("class", "wrapper");
     document.querySelector("#sp").setAttribute("class", "wrapper");
-    document.querySelector("#eu").setAttribute("class", "wrapper");
 }
 
 function SPAIN(){    
@@ -119,12 +119,12 @@ function SPAIN(){
 
     var change = (EU.SPA21/EU.ALL)*100;
     document.querySelector(".chart").setAttribute("style", "height: " + change + "%");
+    document.querySelector(".stars").setAttribute("style", "opacity: " + "0.5");
 
     document.querySelector("#sp").setAttribute("class", "active");
     document.querySelector("#it").setAttribute("class", "wrapper");
     document.querySelector("#fr").setAttribute("class", "wrapper");
     document.querySelector("#de").setAttribute("class", "wrapper");
-    document.querySelector("#eu").setAttribute("class", "wrapper");
 }   
 
 //load functions

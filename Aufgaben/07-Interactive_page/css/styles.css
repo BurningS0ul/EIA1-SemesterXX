@@ -24,6 +24,13 @@ body {
 
 .stars {
     width: 150px;
+    opacity: .5;
+    transition: all .3s;
+}
+
+.stars:hover{
+    transform: scale(1.1);
+    opacity: 1;
 }
 
 nav {
@@ -51,6 +58,7 @@ footer p {
     background: #ffffff80;
     margin-left: 50px;
 }
+
 .chartWrapper .chart {
     position: absolute;
     bottom: 0;
