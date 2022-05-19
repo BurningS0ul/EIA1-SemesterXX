@@ -1,0 +1,52 @@
+body{
+    background-color: #050505;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.beat {
+    width: 150px;
+    height: 150px;  
+    display: flex;
+    margin: 4px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+
+.pad{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 10px;
+    padding-right:10px;
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.beat:hover{
+    transform: scale(1.04);
+}
+
+.pad-1, .pad-2, .pad-3  { 
+    background: linear-gradient(to bottom, #19d5ee , #0b76c3);
+}
+  
+.pad-4, .pad-5, .pad-6, .pad-7 { 
+    background: linear-gradient(to bottom, #e07af4 , #d22fc4);
+}
+  
+.pad-8, .pad-9, .pad-10 { 
+    background: linear-gradient(to bottom, #f1d520 , #f7890c);
+}
+
+.play{
+    width: 150px;
+    height: 150px;
+    transition: all .3s;
+}
+
+.play:hover{
+    transform: scale(1.1);
+}
