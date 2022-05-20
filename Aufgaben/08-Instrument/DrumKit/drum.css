@@ -1,0 +1,84 @@
+body{
+    background-color: #050505;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: large;
+    color:#fff0f0;
+}
+.beat {
+    width: 150px;
+    height: 150px;  
+    display: flex;
+    margin: 4px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+
+.pad{
+    margin-left:auto;
+    margin-right:auto;
+    padding-left: 10px;
+    padding-right:10px;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    transition: all .3s;
+}
+
+.beat:hover{
+    transform: scale(1.04);
+}
+
+.beat:active{
+    transform: scale(0.8);
+}
+
+.pad-1, .pad-2, .pad-3  { 
+    background: linear-gradient(to bottom, #19d5ee , #0b76c3);    
+}
+
+.pad-1:hover, .pad-2:hover, .pad-3:hover  { 
+    background: linear-gradient(to bottom, #90effb , #126cac);
+}
+  
+.pad-4, .pad-5, .pad-6, .pad-7 { 
+    background: linear-gradient(to bottom, #e07af4 , #d22fc4);
+}
+.pad-4:hover, .pad-5:hover, .pad-6:hover, .pad-7:hover { 
+    background: linear-gradient(to bottom, #eeb5f9 , #e35cd7);
+}
+  
+.pad-8, .pad-9, .pad-10 { 
+    background: linear-gradient(to bottom, #f1d520 , #f7890c);
+}
+
+.pad-8:hover, .pad-9:hover, .pad-10:hover { 
+    background: linear-gradient(to bottom, #f8eda5 , #d89a54);
+}
+
+.play{
+    width: auto;
+    height: auto;
+    margin: 4px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+    
+}
+
+.play:hover{
+    transform: scale(1.04);
+    background: linear-gradient(to bottom, #3b3b3b, #1a1a1a);
+}
+
+.play:active{
+    transform: scale(0.8);
+}
