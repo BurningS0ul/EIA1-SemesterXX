@@ -130,15 +130,15 @@ function playSample(){
         sound.volume = 0.2;
     }   
     document.querySelector(".play").addEventListener('click', PlayButton);
-    var sound:HTMLAudioElement = [new Audio("../assets/Drumpad/snare.mp3"), new Audio("../assets/Drumpad/kick.mp3"), new Audio("../assets/Drumpad/hihat.mp3")];
+    var sound:HTMLAudioElement [] = [new Audio("../assets/Drumpad/snare.mp3"), new Audio("../assets/Drumpad/kick.mp3"), new Audio("../assets/Drumpad/hihat.mp3")];
 
-    function PlayButton(){            
+    function PlayButton(){     
+        alert("volume warning");       
 
         setInterval(function() {                       
             sound[0].play();
             sound[1].play();
-            sound[2].play();
-            sound.volume = 0.2;            
+            sound[2].play();           
          }, 500);
     }    
 }
