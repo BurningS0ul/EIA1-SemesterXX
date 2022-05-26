@@ -63,7 +63,7 @@ body{
     background: linear-gradient(to bottom, #f8eda5 , #d89a54);
 }
 
-.play{
+.fa-play{
     width: auto;
     height: auto;
     margin: 4px;
@@ -74,16 +74,15 @@ body{
     
 }
 
-.play:hover{
-    transform: scale(1.04);
-    background: linear-gradient(to bottom, #3b3b3b, #1a1a1a);
+.fa-play:hover{
+    transform: scale(1.2);
 }
 
-.play:active{
-    transform: scale(0.8);
+.fa-play:active{
+    transform: scale(0.5);
 }
 
-.stop{
+.fa-stop{
     width: auto;
     height: auto;
     margin: 4px;
@@ -94,11 +93,26 @@ body{
     
 }
 
-.stop:hover{
-    transform: scale(1.04);
-    background: linear-gradient(to bottom, #3b3b3b, #1a1a1a);
+.fa-stop:hover{
+    transform: scale(1.2);
 }
 
-.stop:active{
-    transform: scale(0.8);
+.fa-stop:active{
+    transform: scale(0.5);
+}
+
+.fa-random{
+    width: auto;
+    height: auto;
+    margin: 4px;
+    border-radius: 8px;
+    transition: all .3s;
+}
+
+.fa-random:hover{
+    transform: scale(1.2);
+}
+
+.fa-random:active{
+    transform: scale(0.5);
 }
