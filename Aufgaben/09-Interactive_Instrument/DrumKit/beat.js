@@ -13,12 +13,20 @@ function Clicker() {
     document.querySelector(".fa-play").addEventListener("click", function () { playButton(); });
     document.querySelector(".fa-random").addEventListener("click", function () { Randomizer(); });
 }
+var play = document.querySelector("#Player");
 function playSample(beats) {
     var sound = new Audio(beats);
+    sound.volume = .25;
     sound.play();
-}
-function stopSample(x) {
-    x.classList.toggle("fa-stop");
+    if (play.getAttribute("class") == "fa-stop") {
+        play.setAttribute("class", "fa-play");
+    }
+    else {
+        play.setAttribute("class", "fa-stop");
+        if (play.getAttribute("class") == "fa-play") {
+            sound.pause();
+        }
+    }
 }
 function Keypress() {
     document.addEventListener("keydown", (event) => {

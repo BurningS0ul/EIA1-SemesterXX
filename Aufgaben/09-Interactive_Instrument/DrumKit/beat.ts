@@ -11,17 +11,26 @@ function Clicker() {
     document.querySelector(".pad-7").addEventListener("click", function() {playSample("../assets/Drumpad/C.mp3"); });    
     document.querySelector(".pad-8").addEventListener("click", function() {playSample("../assets/Drumpad/laugh-1.mp3"); });
     document.querySelector(".pad-9").addEventListener("click", function() {playSample("../assets/Drumpad/laugh-2.mp3"); });
-    document.querySelector(".fa-play").addEventListener("click", function() {playButton()});
-    document.querySelector(".fa-random").addEventListener("click", function() {Randomizer()});
+    document.querySelector(".fa-play").addEventListener("click", function() {playButton(); });
+    document.querySelector(".fa-random").addEventListener("click", function() {Randomizer(); });
 }
 
-function playSample(beats: string) {     
-    var sound: HTMLAudioElement = new Audio(beats);
+var play: HTMLElement = document.querySelector("#Player");
+
+function playSample(beats: string) { 
+    var sound: HTMLAudioElement = new Audio(beats);  
+    sound.volume = .25;  
     sound.play();
-}
-
-function stopSample(x){
-    x.classList.toggle("fa-stop");
+    if (play.getAttribute("class") == "fa-stop"){
+        play.setAttribute("class", "fa-play");
+    }    
+    else {
+        play.setAttribute("class", "fa-stop");
+    
+        if (play.getAttribute("class") == "fa-play") { 
+            sound.pause(); 
+        }
+    }
 }
 
 function Keypress() {
@@ -94,19 +103,19 @@ var Sickbeat: string [] = [
 var counter = 0;
 
 function Randomizer() {       
-    for (var i = 0; i < 3; i++){  
+    for (var i = 0; i < 3; i++) {  
         counter = Math.floor(Math.random() * Sickbeat.length);                   
     }  
 }    
 
-function playButton() {   
+function playButton() {           
 
     setInterval(function() {                       
         playSample(Sickbeat[counter]);
         counter++;
         if (counter == 3) {
             counter = 0;
-        }     
+        }            
     },          500);
 }    
 
