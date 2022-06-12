@@ -21,7 +21,7 @@ var sickbeat: string [] = [
 
 var counter:number = 0;
 var playing: boolean;
-var x: number;
+let x: number;
 var num: number = 0;
 var rnd:number = 0;
 
@@ -39,8 +39,8 @@ function Clicker() {
     document.querySelector(".fa-random").addEventListener("click", function() {Remix(); });
 }
 
-function playSample(beats: string) { 
-    var sound: HTMLAudioElement = new Audio(beats);  
+function playSample(allbeats: string) { 
+    var sound: HTMLAudioElement = new Audio(allbeats);  
     sound.volume = .25; 
     sound.play();
 }
@@ -134,10 +134,11 @@ function PlayButton(){
         document.querySelector("#player").classList.remove("fa-play");
         x = PlayMix();
         playing = true;
-        console.log("WORKING");
+        console.log("PLAY");
 
         if (document.querySelector("#player").getAttribute("class") == " fas fa-stop fa-4x"){
             document.querySelector("#player").setAttribute("class", "fas fa-play fa-4x");
+            document.querySelector("#player").classList.remove("fa-stop");
             clearInterval(x);
             playing = false;
             ResetMix();
