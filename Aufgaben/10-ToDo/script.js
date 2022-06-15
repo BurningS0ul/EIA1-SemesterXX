@@ -4,7 +4,11 @@ function Click() {
 }
 ;
 var myList = document.getElementsByTagName("LI");
+var trash = document.getElementsByClassName("trash");
 var i;
+var done = document.querySelector("ul");
+let count = document.getElementById("list").innerHTML;
+document.getElementById("count").innerHTML;
 for (i = 0; i < myList.length; i++) {
     var span = document.createElement("SPAN");
     var txt = document.createTextNode("\u00D7");
@@ -12,15 +16,6 @@ for (i = 0; i < myList.length; i++) {
     span.appendChild(txt);
     myList[i].appendChild(span);
 }
-var trash = document.getElementsByClassName("trash");
-var i;
-for (i = 0; i < trash.length; i++) {
-    trash[i].onclick = function () {
-        var div = this.parentElement;
-        div.style.display = "none";
-    };
-}
-var done = document.querySelector('ul');
 done.addEventListener('click', function () {
     if (done.tagName === 'LI') {
         done.classList.toggle('checked');
@@ -31,6 +26,7 @@ function newElement() {
     var inputValue = document.getElementById("myInput").value;
     var t = document.createTextNode(inputValue);
     li.appendChild(t);
+    count++;
     if (inputValue === '') {
         alert("You must write something!");
     }
@@ -47,6 +43,7 @@ function newElement() {
         trash[i].onclick = function () {
             var div = this.parentElement;
             div.style.display = "none";
+            count--;
         };
     }
 }
